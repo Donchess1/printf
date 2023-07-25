@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
 /**
@@ -51,7 +52,7 @@ int _printf(const char *format, ...) {
     return count;
 }
 
-int main() {
+/*int main() {
     _printf("Hello, %s! This is a %c test. The percentage sign: %%\n", "User", 'c');
     return 0;
-}
+}*/
