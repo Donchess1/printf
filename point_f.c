@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
-
+#include"main.h"
 /**
  *print_pointer - prints pointer variable value
  *@types: various possible types of variables to be pointed to
