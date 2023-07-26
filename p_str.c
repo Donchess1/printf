@@ -1,4 +1,5 @@
-#include"main.h"
+#include "main.h"
+
 /**
  * print_string - Prints a string
  * @types: List a of arguments
@@ -20,6 +21,7 @@ int print_string(va_list types, char buffer[],
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
+
 	if (str == NULL)
 	{
 		str = "(null)";
@@ -33,24 +35,25 @@ int print_string(va_list types, char buffer[],
 	if (precision >= 0 && precision < length)
 		length = precision;
 
-	if (width > length)
+	switch (width > length)
 	{
+	case 1:
 		if (flags & F_MINUS)
 		{
 			write(1, &str[0], length);
 			for (i = width - length; i > 0; i--)
 				write(1, " ", 1);
-			return (width);
+			return width;
 		}
 		else
 		{
 			for (i = width - length; i > 0; i--)
 				write(1, " ", 1);
 			write(1, &str[0], length);
-			return (width);
+			return width;
 		}
+	default:
+		return (write(1, str, length));
 	}
-
-	return (write(1, str, length));
 }
 
