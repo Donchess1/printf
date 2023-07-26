@@ -7,13 +7,6 @@
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
 
-int is_printable(char c);
-int _printf(const char *format, ...);
-int print_pointer(va_list types, char buffer[]);
-int append_hexa_code(char c, char buffer[], int offset);
-int print_integer(int num);                     
-
-
 /* FLAGS */
 #define F_MINUS 1
 #define F_PLUS 2
@@ -121,5 +114,5 @@ int is_digit(char);
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
 
-#endif /* MAIN_H */
+#endif 
 

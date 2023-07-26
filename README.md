@@ -1,2 +1,1 @@
-This is the beginning of the team project
-printf collaborating with my oga
+This is a collaborative work between Abodunrin Stephen and Alabi Olalekan
