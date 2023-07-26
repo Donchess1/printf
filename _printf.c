@@ -19,7 +19,8 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 
-	for (i = 0; format && format[i] != '\0'; i++)
+	i = 0;
+	while (format && format[i] != '\0')
 	{
 		if (format[i] != '%')
 		{
@@ -42,7 +43,7 @@ int _printf(const char *format, ...)
 			if (printed == -1)
 				return (-1);
 			printed_chars += printed;
-		}
+		} i++;
 	}
 
 	print_buffer(buffer, &buff_ind);

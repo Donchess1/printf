@@ -31,7 +31,8 @@ int print_binary(va_list types, char buffer[],
 		m /= 2;
 		a[i] = (n / m) % 2;
 	}
-	for (i = 0, sum = 0, count = 0; i < 32; i++)
+	i = 0 , sum = 0, count = 0;
+		while (i < 32)
 	{
 		sum += a[i];
 		if (sum || i == 31)
@@ -40,7 +41,7 @@ int print_binary(va_list types, char buffer[],
 
 			write(1, &z, 1);
 			count++;
-		}
+		} i++;
 	}
 	return (count);
 }
