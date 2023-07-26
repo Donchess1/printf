@@ -1,5 +1,5 @@
 #include "main.h"
-/************************* PRINT PERCENT SIGN *************************/
+
 /**
  * print_percent - Prints a percent sign
  * @types: Lista of arguments
