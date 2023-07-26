@@ -3,43 +3,30 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
-
 #define UNUSED(x) (void)(x)
+<<<<<<< HEAD
 #define BUFF_SIZE 1024
 
 /* FLAGS */
+=======
+
+#define UNUSED(x) (void)(x)
+#define arr_size 1024
+
+>>>>>>> 4fdf71fadddea6d03064dd75366978dd18b4bc5c
 #define F_MINUS 1
 #define F_PLUS 2
 #define F_ZERO 4
 #define F_HASH 8
 #define F_SPACE 16
 
-/* SIZES */
 #define S_LONG 2
 #define S_SHORT 1
 
-/**
- * struct fmt - Struct op
- *
- * @fmt: The format.
- * @fn: The function associated.
- */
-struct fmt
-{
-	char fmt;
-	int (*fn)(va_list, char[], int, int, int, int);
-};
 
-
-/**
- * typedef struct fmt fmt_t - Struct op
- *
- * @fmt: The format.
- * @fm_t: The function associated.
- */
-typedef struct fmt fmt_t;
-
+int is_printable(char c);
 int _printf(const char *format, ...);
+<<<<<<< HEAD
 int handle_print(const char *fmt, int *i,
 va_list list, char buffer[], int flags, int width, int precision, int size);
 
@@ -116,3 +103,35 @@ long int convert_size_unsgnd(unsigned long int num, int size);
 
 #endif 
 
+=======
+int print_pointer(va_list types, char buffer[]);
+int append_hexa_code(char c, char buffer[], int offset);
+int print_integer(int num);int print_non_printable(va_list types, char buffer[]);
+int unsigned_printer(va_list argList, char outputArr[], int activeFlags,
+    int outputWidth, int outputPrec, int outputSize);
+int octal_printer(va_list argList, char outputArr[], int activeFlags,
+    int outputWidth, int outputPrec, int outputSize);
+int hexad_printer(va_list argList, char outputArr[], int activeFlags,
+        int outputWidth, int outputPrec, int outputSize);
+int isupper_hexa(va_list argList, char outputArr[], int activeFlags,
+       int outputWidth, int outputPrec, int outputSize);
+int hexa_lower(va_list argList, char mapTo[], char outputArr[],
+        int activeFlags, char flagCh, int outputWidth, int outputPrec, int outputSize);
+int char_printer(va_list data, char printArr[],
+        int flags, int w, int max, int size);
+int string_printer(va_list data, char printStr, int w,
+        int size, int max, int flags);
+int integer_printer(va_list data, char printStr, int w,
+        int size, int max, int flags);
+int binary_printer(va_list data, char printStr, int w,
+        int size, int max, int flags);
+int percent_printer(va_list data, char printStr, int w,
+        int size, int max, int flags);
+int calculateWidth(const char *formattedStr, int *index, va_list argList);
+int calculateFlags(const char *formattedStr, int *index);
+int calculatePrecision(const char *formattedStr, int *currentIndex, va_list argList);
+int calculateArgSize(const char *formattedStr, int *currentIndex);
+
+
+#endif
+>>>>>>> 4fdf71fadddea6d03064dd75366978dd18b4bc5c
