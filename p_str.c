@@ -15,10 +15,10 @@ int print_string(va_list types, char buffer[],
 	int length = 0, i;
 	char *str = va_arg(types, char *);
 
-	UNUSED(buffer);
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(precision);
+	UNUSED(buffer); 
+	UNUSED(flags); 
+	UNUSED(width); 
+	UNUSED(precision); 
 	UNUSED(size);
 
 	if (str == NULL)
@@ -62,4 +62,3 @@ int print_string(va_list types, char buffer[],
 
 	return (write(1, str, length));
 }
-
